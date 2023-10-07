@@ -8,10 +8,15 @@ RUN npm install -h http-server
 WORKDIR /app
 
 # Copia del "package.json" a la ruta principal del proyecto
-COPY package*.json ./app
+COPY package*.json ./
 
 # Instalar las dependencias
 RUN npm install
 
 # Copiar los archivos
-COPY . ./app 
+COPY . .
+
+RUN npm run build
+
+EXPOSE 8080
+CMD ['http-server', 'dist']
