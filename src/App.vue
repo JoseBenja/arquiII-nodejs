@@ -1,6 +1,8 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {apiProducts} from './service/neuapp';
+import Product from './components/products.vue';
+
 
 const products = ref([]);
 
@@ -24,7 +26,9 @@ async function loadProducts(){
 </script>
 
 <template>
-  <products></products>
+    <div>
+    <Product></Product>
+  </div>
 </template>
 
 <style scoped>

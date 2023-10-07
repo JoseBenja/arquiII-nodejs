@@ -2,7 +2,7 @@
 FROM node:20-alpine3.17
 
 # Instalar un servidor Http
-RUN npm install -h http-server
+RUN npm install -g http-server
 
 # Abri la carpeta "app"
 WORKDIR /app
@@ -19,4 +19,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 8080
-CMD ['http-server', 'dist']
+CMD [ "http-server", "dist"]
